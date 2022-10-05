@@ -2,50 +2,23 @@
 
 
 
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-}
-
 :root {
-    --color-bg: #000235;
+
+    --font-family: 'Outfit', sans-serif;
+
+
+    --gradient-text: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
+    --gradient-bar: linear-gradient(103.22deg, #AE67FA -13.86%, #F49867 99.55%);
+    
+    --color-bg: #040C18;
+    --color-footer : #031B34;
+    --color-blog: #042c54;
+    --color-text: #81AFDD;
+    --color-subtext: #FF8A71;
     --color-botton1: #6568e7;
     --color-botton2: #9193DE;
     --color-urlBox: #8D8DDA;
     --color-emailBox: #141350;
     --color-circle1: rgba(141, 141, 218, 0.8);
     --color-circle2: rgba(171, 217, 217, 0.8);
-    --color-white: #fff;
-
-
-    --container-width-lg: 75%;
-    --container-width-md: 86%;
-    --container-width-sm: 90%;
-
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-::webkit-scrollbar-thumb:active {
-    background: linear-gradient(to left, #22ADD4, #1E98BA);
-    
-}
-
-body {
-    font-family: 'Outfit', sans-serif;
-    font-family: 'Roboto', sans-serif;
-    background: var(--color-bg);
-    color: var(--color-white); 
-    line-height: 1.7;
-    
-
-
-}
-
+}    

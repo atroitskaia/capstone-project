@@ -1,0 +1,28 @@
+.moodninja__navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 2rem 6rem;
+
+}
+
+.moodninja__navBar-links {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.moodninja__navBar-links_logo {
+    margin-right: 2rem;
+
+}
+
+.moodninja__navBar-links_logo {
+   
+    width: 251px;
+    height: 28px;
+    
+}

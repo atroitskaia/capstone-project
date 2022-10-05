@@ -1,5 +1,5 @@
-import React from 'react'
-import './analytics.css'
+import React from 'react';
+import './analytics.css';
 
 
 const Analytics = () => {
