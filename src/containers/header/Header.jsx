@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; 
 import './header.css';
 import aboutIllustration from '../../assets/aboutIllustration.svg'
 

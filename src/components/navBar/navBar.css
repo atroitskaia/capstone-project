@@ -1,36 +1,43 @@
 .moodninja__navBar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    padding: 2rem 6rem;
-
+  padding: 2rem 20rem;
 }
 
 .moodninja__navBar-links {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .moodninja__navBar-links_logo {
-    margin-right: 2rem;
-    flex: 1;                    /* */
-    display: flex;
-    justify-content: flex-start;
-    height: 100vh;
-    width: 100vw;
-    align-items: center;
-
+  margin-right: 2rem;
+  flex: 1; /* */
+  display: flex;
+  justify-content: flex-start;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
 }
 
 .moodninja__navBar-links_logo {
-   
-    width: 251px;
-    height: 28px;
+  width: 251px;
+  height: 28px;
+}
+
+.moodninja__navBar-links_container {
+    margin: 10px;
+    padding: 20px;
     
+}
+
+.mdi {
+    margin: 10px;
+    padding: 20px;
+    /* background-color: red; */
 }
 
 /*
@@ -39,4 +46,3 @@
     flex-direction: row;
 }
 */
-
