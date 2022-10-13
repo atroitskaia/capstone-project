@@ -8,7 +8,8 @@ const Header = () => {
     <div className="moodninja__header section__padding">
       <div className="moodninja__header-content">
         <h1 className="gradient__text">Sentiment analysis Platform</h1>                        
-        <p> With the help of our AI easily identify positive, negative or neutral sentiment of comments from the range of social media platforms </p>
+        <p> With the help of our AI easily identify positive, 
+            negative or neutral sentiment of comments from the range of social media platforms </p>
       </div>
 
       <div className="moodninja__header-image">

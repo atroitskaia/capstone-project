@@ -56,8 +56,9 @@ moodninja__header {
   position: absolute;
   width: 522px;
   height: 395px;
+  left: auto;
   /* left: calc(50% - 522px / 2 + 268px); */
- right: 14rem;
+  right: 14rem;
   top: 250px;
 
   /* background: url(Illustration 1.png); */
