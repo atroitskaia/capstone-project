@@ -1,25 +1,16 @@
 import React from 'react';
-
-import { Footer, Features, Header, Possibility, WhatSentiment } from './containers';
-import { Contact, Intro, NavBar, Analytics } from './components';
-
+import MainLanding from './components/MainLanding';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 import './App.css';
-
 
 const App = () => (
     <div className="App">
-        <div className="gradient__bg">
-            <NavBar />
-            <Header />
-        </div>
-        <Intro />
-        <Analytics />
-        <WhatSentiment />
-        <Features />
-        <Possibility />
-        <Contact />
+        <Header />
+        <MainLanding />
+        {/* <AnalyticsLink /> */}
         <Footer />
     </div>
-  );
+);
 
 export default App;

@@ -1,5 +1,6 @@
 import React from "react";
-import URLBox from "../../components/urlBox/URLBox";
+import { Contact } from "..";
+import URLBox from "../urlBox/URLBox";
 import './footer.css';
 
 
@@ -7,8 +8,7 @@ import './footer.css';
 const Footer = () => {
   return (
     <div className="footerCss">
-      <div>Footer</div>
-      <URLBox />
+      <Contact />
     </div>
   );
 };
