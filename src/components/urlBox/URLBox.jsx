@@ -30,8 +30,8 @@ const URLBox = () => {
 
     // error handling "is not a valid url for youtube or twitter, please retry
 
-    // https://zingsendpoint.com?url=http://www.youtube.com&type=youtube
-    // https://zingsendpoint.com?url=http://www.twitter.com&type=twitter
+    // https://endpoint.com?url=http://www.youtube.com&type=youtube
+    // https://endpoint.com?url=http://www.twitter.com&type=twitter
     
     // Next Steps
     // error handling "is not a valid url for youtube or twitter, please retry"
