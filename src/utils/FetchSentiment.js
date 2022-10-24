@@ -5,7 +5,7 @@ export const FetchSentiment = () => {
 
   const url = "https://jsonplaceholder.typicode.com/posts";
 
-  //   const url = "https://zingsapi.com"; // zing's apit
+  //   const url = "https://endpointapi.com"; // endpoint
   //   const youtubeURL =
   //     "?yturl=https://www.youtube.com/watch?v=nUmQ13rEVT4&list=RDCMUCVTyTA7-g9nopHeHbeuvpRA&start_radio=1&ab_channel=LateNightwithSethMeyers";
   //   const urlToSend = `${url}?yturl=${youtubeURL}`;
