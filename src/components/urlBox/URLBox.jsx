@@ -13,7 +13,7 @@ const URLBox = () => {
     // this will prevent default value to going to a new page
 
     e.preventDefault();
-    // console.log(url.urlField);
+    console.log(url.urlField);
     const urlField = url.urlField;
 
     let type;
@@ -37,12 +37,12 @@ const URLBox = () => {
     // error handling "is not a valid url for youtube or twitter, please retry"
 
     const sentimentBaseEndpoint = "https://jsonplaceholder.typicode.com/posts";
-    const endPointUrl = `${sentimentBaseEndpoint}?url=${urlField}&type=${type}`;
+    //const endPointUrl = `${sentimentBaseEndpoint}?url=${urlField}&type=${type}`;
     // fetch data from API
     fetch(sentimentBaseEndpoint)
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
+        console.log(data);
         setApiData(data);
       })
       .catch((err) => {
@@ -50,9 +50,9 @@ const URLBox = () => {
       });
   };
 
-
+  // prevents page from reloading 
   const handleUrlChange = (e) => {
-    // console.log(e.target.value);
+    console.log(e.target.value);
     const newUrl = { ...url };
     newUrl[e.target.name] = e.target.value;
     setUrl(newUrl);
