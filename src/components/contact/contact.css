@@ -1,0 +1,7 @@
+.foot-links {
+    display: flex;
+}
+
+.foot-links div {
+    padding: 8px 12px;
+}
