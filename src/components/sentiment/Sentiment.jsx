@@ -1,6 +1,8 @@
 import React from 'react'; 
 import './sentiment.css';
 import aboutIllustration from '../../assets/aboutIllustration.svg'
+import TestGraph from '../graphs/TestGraph'
+
 
 
 const Sentiment = () => {
@@ -15,7 +17,8 @@ const Sentiment = () => {
 
       <div className="moodninja__header-image">
         <img src={aboutIllustration} />
-        </div>  
+        </div>
+        <TestGraph />  
     </div>
   )
 }
