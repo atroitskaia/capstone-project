@@ -1,8 +1,8 @@
-.moodninja__features {
+.moodninja__header {
     display: flex;
   }
-
-  .moodninja__features-content {
+  
+  .moodninja__header-content {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -10,16 +10,16 @@
     flex-direction: column;
     margin-right: 5rem;
   }
-
-  .moodninja__features-content h2 {
-    position: absolute;
-    width: 518px;
-    height: 122px;
-    left: 1200px;
-    top: 791px;
+  
+  .moodninja__header-content h1 {
+    /* position: absolute; */
+    width: 525px;
+    height: 262px;
+    left: auto;
+    top: 250px;
     font-family: var(--font-family);
     font-weight: 800;
-
+  
     flex: 1;
     display: flex;
     justify-content: center;
@@ -29,21 +29,15 @@
     font-size: 62px;
     line-height: 75px;
     text-transform: capitalize;
-
-}
-
-.moodninja__features-text {
-    color: pink;
-}
-
-.moodninja__features-content p {
-    /* ffeatures */
-    position: absolute;
-    width: 522px;
-    height: 395px;
-    left: 1200px;
-    right: 14rem;
-    top: 966px;
+  }
+  
+  .moodninja__header-content p {
+    /* aboutBody */
+    /* position: absolute; */
+    width: 435px;
+    height: 138px;
+    left: auto;
+    top: 417px;
   
     /* body text */
     font-family: var(--font-family);
@@ -55,17 +49,18 @@
   
     margin-top: 1.5rem;
   }
-
-  .moodninja__features-image {
+  
+  .moodninja__header-image {
     /* aboutIllustration */
   
-    position: absolute;
-    width: 431.72px;
-    height: 407.22px;
-    left: 300px; 
+    /* position: absolute; */
+    width: 522px;
+    height: 395px;
+    left: auto;
+    /* left: calc(50% - 522px / 2 + 268px); */
     right: 14rem;
-    top: 766px;
-    
+    /* top: 250px; */
+  
     /* background: url(Illustration 1.png); */
   }
   

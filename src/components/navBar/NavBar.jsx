@@ -13,7 +13,7 @@ const NavBar = () => {
          <img src={logo} alt="logo" />
         </div>
 
-        <HeaderLinks candybarname="Anastasia" />
+        <HeaderLinks />
       </div>
     </div>
   )

@@ -1,11 +1,14 @@
 import React from 'react'; 
-import './header.css';
+import './sentiment.css';
 import aboutIllustration from '../../assets/aboutIllustration.svg'
+import TestGraph from '../graphs/TestGraph'
 
 
-const Header = () => {
+
+const Sentiment = () => {
   return (
     <div className="moodninja__header section__padding">
+      
       <div className="moodninja__header-content">
         <h1 className="gradient__text">Sentiment analysis Platform</h1>                        
         <p> With the help of our AI easily identify positive, 
@@ -14,9 +17,9 @@ const Header = () => {
 
       <div className="moodninja__header-image">
         <img src={aboutIllustration} />
-        </div>  
+        </div>
     </div>
   )
 }
 
-export default Header
+export default Sentiment

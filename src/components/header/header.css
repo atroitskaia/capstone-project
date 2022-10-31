@@ -12,7 +12,7 @@ moodninja__header {
 }
 
 .moodninja__header-content h1 {
-  position: absolute;
+  /* position: absolute; */
   width: 525px;
   height: 262px;
   left: auto;
@@ -33,7 +33,7 @@ moodninja__header {
 
 .moodninja__header-content p {
   /* aboutBody */
-  position: absolute;
+  /* position: absolute; */
   width: 435px;
   height: 138px;
   left: auto;
@@ -53,7 +53,7 @@ moodninja__header {
 .moodninja__header-image {
   /* aboutIllustration */
 
-  position: absolute;
+  /* position: absolute; */
   width: 522px;
   height: 395px;
   left: auto;
