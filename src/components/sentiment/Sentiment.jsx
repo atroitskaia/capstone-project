@@ -18,7 +18,6 @@ const Sentiment = () => {
       <div className="moodninja__header-image">
         <img src={aboutIllustration} />
         </div>
-        <TestGraph />  
     </div>
   )
 }
