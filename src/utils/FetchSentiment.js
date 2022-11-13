@@ -10,23 +10,23 @@ export const FetchSentiment = () => {
   //     "?yturl=https://www.youtube.com/watch?v=nUmQ13rEVT4&list=RDCMUCVTyTA7-g9nopHeHbeuvpRA&start_radio=1&ab_channel=LateNightwithSethMeyers";
   //   const urlToSend = `${url}?yturl=${youtubeURL}`;
 
-//   useEffect(() => {
-//     fetch(url)
-//       .then((res) => res.json())
-//       .then((data) => {
-//         // console.log(data);
-//         setPosts(data);
-//       });
-//   }, []);
+  //   useEffect(() => {
+  //     fetch(url)
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         // console.log(data);
+  //         setPosts(data);
+  //       });
+  //   }, []);
   // }, [onClickSubmitYouTube]
 
   return (
     <>
       {console.log(posts)}
       <ul>
-      {posts.map((post) => {
-        return <li key={post.id}>{post.userId}</li>
-      })}
+        {posts.map((post) => {
+          return <li key={post.id}>{post.userId}</li>;
+        })}
       </ul>
     </>
   );

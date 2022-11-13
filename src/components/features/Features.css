@@ -65,12 +65,17 @@
     /* aboutIllustration */
   
     position: initial;
-    width: 431.72px;
+    width: 522px;
     height: 407.22px;
     left: 300px; 
     right: 14rem;
     top: 766px;
-    margin-right: 5rem;
+    margin-right: 12.7rem;
+    flex: 1 1;
+    /* display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column; */
     
     /* background: url(Illustration 1.png); */
   }

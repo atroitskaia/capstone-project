@@ -10,7 +10,7 @@ const HeaderLinks = () => {
           <a href="mdi_discord" className='mdi'><img src={mdi_discord} alt="mdi_discord"/></a> 
           <a href="mdi_github" className='mdi'><img src={mdi_github} alt="mdi_github"/></a>
           <a href="mdi_reddit" className='mdi'><img src={mdi_reddit} alt="mdi_reddit"/></a>
-          <a href="mdi_twitter"><img src={mdi_twitter} alt="mdi_twitter"/></a>
+          <a href="mdi_twitter" className='mdi'><img src={mdi_twitter} alt="mdi_twitter"/></a>
         </div>  
     )
 }

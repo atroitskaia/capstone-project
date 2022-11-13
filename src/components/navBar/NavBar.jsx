@@ -1,5 +1,4 @@
 import React from 'react';
-import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import './navBar.css';
 import HeaderLinks from './HeaderLinks';
 import logo from '../../assets/logo.svg';

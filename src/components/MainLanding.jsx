@@ -1,14 +1,14 @@
 import React from 'react';
 import Sentiment from "./sentiment/Sentiment";
-import Analytics from "./analytics/Analytics";
 import URLBox from './urlBox/URLBox';
 import SentimentResults from './SentimentResults';
+import Features from './features/Features';
 
 const MainLanding = () => {
     return (
         <>
             <Sentiment />
-            <Analytics />
+            <Features />
             <URLBox />
             <SentimentResults />
         </>
