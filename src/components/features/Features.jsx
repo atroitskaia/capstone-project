@@ -1,6 +1,6 @@
 
 import React from 'react'
-import './analytics.css';
+import './Features.css';
 
 import analyticsIllustration from '../../assets/analyticsIllustration.svg'
 

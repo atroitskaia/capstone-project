@@ -2,12 +2,10 @@ import React from 'react';
 import './sentiment.css';
 import aboutIllustration from '../../assets/aboutIllustration.svg'
 
-
-
-
 const Sentiment = () => {
   return (
     <div className="moodninja__header section__padding">
+      
       
       <div className="moodninja__header-content">
         <h1 className="gradient__text">Sentiment analysis Platform</h1>                        
