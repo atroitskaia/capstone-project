@@ -1,6 +1,4 @@
 
-
-// export default DoughnutChart;
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
 

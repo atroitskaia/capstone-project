@@ -38,13 +38,13 @@ function points(arr_x, arr_y) {
   return ret;
 }
 
-export function BarChart() {
+export function Line() {
   return (
     <Chart
-      type="bar"
+      type="line"
       options={{
         scales: {
-          y: {
+          x: {
             type: "time"
           }
         }
@@ -81,5 +81,4 @@ export function BarChart() {
   );
 }
 
-
-export default BarChart;
+export default Line;

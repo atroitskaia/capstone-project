@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 
+
+
 export const FetchSentiment = () => {
   const [posts, setPosts] = useState([]);
-
+  
   const url = "https://jsonplaceholder.typicode.com/posts";
 
   //   const url = "https://endpointapi.com"; // endpoint
