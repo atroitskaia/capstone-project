@@ -14,8 +14,9 @@ const Features = () => {
       
       <div className="moodninja__features-content">
         <h2 className="gradient-bar moodninja__features-text">Get Instant Analytics</h2>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-            Duis aute irure dolor in reprehenderit in vol."
+        <p>For content creators, knowing the sentiment of the general public towards 
+           their own content or their competitors can help determine areas in which they can improve or content that is unsuitable for production. Similarly, advertisers can use this 
+          information to decide on good candidates for sponsorships
         </p>
       </div>
     
