@@ -1,58 +1,70 @@
-import React, { useState } from "react";
-import { FetchSentiment } from "../../utils/FetchSentiment";
+import React, { useState, useEffect } from "react";
+import LineChart from "../graphs/LineChart";
 import "./urlBox.css";
 
-// Form that extracts URL from an input field
+const determineYouTubeOrTwitter = (url) => {
+  if (url.indexOf("youtube") > -1 || url.indexOf("youtu.be") > -1) {
+    return "YouTube";
+  } else if (url.indexOf("twitter") > -1) {
+    return "Twitter";
+  } else {
+    console.log("Not YouTube or Twitter");
+  }
+};
 
 const URLBox = () => {
   const [url, setUrl] = useState({ urlField: "" });
   const [apiData, setApiData] = useState([]);
+  const [graphDataLoaded, setGraphDataLoaded] = useState(false);
 
   const handleUrlSubmission = (e) => {
-    // handleUrlSubmission returns an event (e)
-    // this will prevent default value to going to a new page
-
     e.preventDefault();
-    console.log(url.urlField);
     const urlField = url.urlField;
 
-    let type;
-    if (
-      urlField.toLowerCase().indexOf("youtube.com") > -1 ||
-      urlField.toLowerCase().indexOf("youtu.be") > -1
-    ) {
-      type = "youtube";
-    } else if (urlField.toLowerCase().indexOf("twitter.com") > -1) {
-      type = "twitter";
-    } else {
-      type = "";
+   
+    // Access YouTube Id
+    let youTubeId, twitterId;
+
+    // if youtube.com?
+    if (url.urlField.indexOf("youtube.com") > -1) {
+    const paramsString = urlField.split("?")[1];
+    const paramsArr = paramsString.split("&");
+
+      paramsArr.forEach((item) => {
+        let parts = item.split("=");
+        if (parts[0] === "v") {
+          youTubeId = parts[1];
+        }
+      });
     }
 
-    // error handling "is not a valid url for youtube or twitter, please retry
+    // if youtu.be
+    if (url.urlField.indexOf("youtu.be/") > -1) {
+      youTubeId = urlField.split('youtu.be/')[1]
+    }
 
-    // https://endpoint.com?url=http://www.youtube.com&type=youtube
-    // https://endpoint.com?url=http://www.twitter.com&type=twitter
-    
-    // Next Steps
-    // error handling "is not a valid url for youtube or twitter, please retry"
+    let endpointUrl;
+    if (determineYouTubeOrTwitter(url.urlField) === "YouTube") {
+      endpointUrl = "http://localhost:8000/website/youtube/" + youTubeId + "/";
+    } else if (determineYouTubeOrTwitter(url.urlField) === "Twitter") {
+      endpointUrl = "http://localhost:8000/website/twitter/" + twitterId + "/";
+    } else {
+      console.log("not a valid url");
+    }
 
-    const sentimentBaseEndpoint = "https://jsonplaceholder.typicode.com/posts";
-    //const endPointUrl = `${sentimentBaseEndpoint}?url=${urlField}&type=${type}`;
-    // fetch data from API
-    fetch(sentimentBaseEndpoint)
+    fetch(endpointUrl)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         setApiData(data);
+        setGraphDataLoaded(true);
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
-  // prevents page from reloading 
   const handleUrlChange = (e) => {
-    console.log(e.target.value);
     const newUrl = { ...url };
     newUrl[e.target.name] = e.target.value;
     setUrl(newUrl);
@@ -72,17 +84,14 @@ const URLBox = () => {
           />
           <button type="submit">Go</button>
         </form>
-        {/* <form onSubmit={handleUrlSubmission}>
-        <input type="text" placeholder="Enter Twitter URL" id="twitter" name="twitter"/>
-        <button type="submit">Go</button>
-        </form> */}
       </div>
-      <div>
-        <ul style={{textAlign: 'center'}}>
-          {apiData.map((apiItem) => {
-            return <li key={apiItem.id} style={{color: 'white'}}>{apiItem.userId}</li>;
-          })}
-        </ul>
+      <div style={{ textAlign: "center" }}>
+        {graphDataLoaded && (
+          <LineChart
+            apiData={apiData}
+            website={determineYouTubeOrTwitter(url.urlField)}
+          />
+        )}
       </div>
     </>
   );
