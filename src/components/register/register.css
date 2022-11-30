@@ -1,0 +1,28 @@
+.register__body{
+    background: var(--color-bg);
+}
+
+.form {
+    background-color: white;
+    border-radius: 5px;
+    width: 550px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.form__body {
+    text-align: left;
+    padding: 20px, 10px;
+
+}
+.form__label{
+    width: 40%;
+}
+.form__input{
+    width: 60%;
+}
+.footer {
+    text-align: center;
+
+}
+
