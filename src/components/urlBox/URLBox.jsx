@@ -32,8 +32,7 @@ const URLBox = () => {
     // ****************************************************************
     // previously written was url.urlField("twitter.com") > -1
     if (urlField.indexOf("twitter.com") > -1) {
-      // if i want to tuse regex for twit id
-      // (?<twitterId>[^/]*)(\?.*)?$
+    
 
     
       // Grab twitter id AND everything that follows it at the end of the url
@@ -73,9 +72,10 @@ const URLBox = () => {
     // if(urlField.indexOf())
     let endpointUrl;
     if (determineYouTubeOrTwitter(url.urlField) === "YouTube") {
-      endpointUrl = "http://localhost:8000/website/youtube/" + youTubeId + "/";
+      // endpointUrl = "http://localhost:8000/api/website/youtube/";
+      endpointUrl = "http://localhost:8000/api/website/youtube/" + youTubeId + "/";
     } else if (determineYouTubeOrTwitter(url.urlField) === "Twitter") {
-      endpointUrl = "http://localhost:8000/website/twitter/" + twitterId + "/";
+      endpointUrl = "http://localhost:8000/api/website/twitter/" + twitterId + "/";
     } else {
       console.log("not a valid url");
     }
