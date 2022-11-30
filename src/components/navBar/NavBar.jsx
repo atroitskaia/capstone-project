@@ -1,22 +1,19 @@
 import React from 'react';
 import './navBar.css';
-import HeaderLinks from './HeaderLinks';
-import logo from '../../assets/logo.svg';
-
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
     <div className="moodninja__navBar">
+      <div className="moodninja__navBar-name">MOODNINJA.AI</div>
       <div className="moodninja__navBar-links">
-        <div className="moodninja__navBar-links_logo">
-         <img src={logo} alt="logo" />
-        </div>
-
-        <HeaderLinks />
+        <Link to='/register' activeClassName="moodninja__navBar-link-items">Register </Link>
+        <Link to='/login' activeClassName="moodninja__navBar-link-items">Login</Link>
       </div>
     </div>
   )
-}
+} 
 
 export default NavBar
+
 

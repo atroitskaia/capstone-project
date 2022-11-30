@@ -4,13 +4,21 @@
   align-items: center;
   padding: 2rem 20rem;
   max-width: 1800px;
+  color: #fff
 }
 
+.moodninja__navBar-name {
+  --gradient-text: var(--gradient-text);
+}
 .moodninja__navBar-links {
-  flex: 1;
+  /* flex: 1; */
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+.moodninja__navBar-link-items {
+  padding: 0 8px;
 }
 
 .moodninja__navBar-links_logo {
