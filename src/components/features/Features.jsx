@@ -7,7 +7,7 @@ import analyticsIllustration from '../../assets/analyticsIllustration.svg'
 const Features = () => {
   return (
 
-    <div className="mmodninja__features section__padding">
+    <div className="moodninja__features section__padding">
       <div className="moodninja__features-image">
         <img src={analyticsIllustration} />
       </div>

@@ -40,7 +40,7 @@ const Register = () => {
                 </div>
             </div>
             <div class="footer">
-                <button onClick={()=>handleSubmit()} type="submit" class="btn">Register</button>
+                <button onClick={()=>handleSubmit()} type="submit" class="btn">Submit</button>
             </div>
         </div>
     )

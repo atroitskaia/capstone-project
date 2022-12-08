@@ -12,6 +12,7 @@ import './App.css';
 const App = () => (
     <div className="App">
         <Header />
+
         <Routes>
         <Route path='/' element={<MainLanding/>} />
             <Route path='/register' element={<Register/>} />

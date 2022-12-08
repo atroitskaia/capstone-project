@@ -4,10 +4,38 @@
     flex-direction: row;
     align-items: flex-start;
     padding: 10px;
-    gap: 22px;
+    /* gap: 22px; */
     border-radius: 10px;
     margin: 0 auto;
-    width: 50%;
-    padding: 10px 20px;
+    padding: 14px 16px;
     /* border: 2px solid #fff; */
+    width: 1200px;
+}
+
+.sentiment-form {
+    display: flex;
+    width: 100%;
+}
+
+.input-analytics-input {
+    border-width: 2px !important;
+    border-style: outset !important;
+    border-color: buttonborder !important;
+    /* width: 57%; */
+    height: 40px !important;
+    flex: 1;
+}
+
+.fetch-analytics-button {
+    font-size: 18px;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 3px 6px;
+}
+
+.sentiment-results {
+    text-align: center;
+    width: 68%;
+    margin: 26px auto 0;
+    font-family: roboto;
 }

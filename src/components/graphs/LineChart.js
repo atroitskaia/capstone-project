@@ -30,7 +30,7 @@ const LineChart = (props) => {
 
   return (
     <>
-    <h1>{props.website}</h1>
+    <h1 style={{marginTop: '12px'}}>{props.website} Line Chart</h1>
     <Chart
       type="line"
       options={{

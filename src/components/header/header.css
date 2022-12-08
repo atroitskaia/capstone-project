@@ -1,5 +1,7 @@
-moodninja__header {
+.moodninja__header {
   display: flex;
+  margin: auto;
+  max-width: 1700px;
 }
 
 .moodninja__header-content {

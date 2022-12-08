@@ -4,7 +4,11 @@
   align-items: center;
   padding: 2rem 20rem;
   max-width: 1800px;
-  color: #fff
+  color: #fff;
+  font-family: 'outfit', sans;
+  font-size: 20px;
+  margin: auto;
+  max-width: 1700px;
 }
 
 .moodninja__navBar-name {

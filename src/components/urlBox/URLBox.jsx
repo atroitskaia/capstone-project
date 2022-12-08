@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import LineChart from "../graphs/LineChart";
+import BarChart from "../graphs/BarChart";
+import DoughnutChart from "../graphs/Doughnut";
+
 import "./urlBox.css";
 
 const determineYouTubeOrTwitter = (url) => {
@@ -32,20 +35,17 @@ const URLBox = () => {
     // ****************************************************************
     // previously written was url.urlField("twitter.com") > -1
     if (urlField.indexOf("twitter.com") > -1) {
-    
-
-    
       // Grab twitter id AND everything that follows it at the end of the url
       const twitterIdAndSuffix = urlField.split("/status/")[1];
       twitterId = twitterIdAndSuffix;
-      
+
       // Check if there is a suffix
       // If so reassign the twitterId after removing the suffix
-      if (twitterIdAndSuffix.indexOf('?') > -1) {
-        twitterId = twitterIdAndSuffix.split('?')[0]
+      if (twitterIdAndSuffix.indexOf("?") > -1) {
+        twitterId = twitterIdAndSuffix.split("?")[0];
       }
     }
-    
+
     // if youtube.com
     // https://www.youtube.com/watch?v=qOrlYzqXPa8&ab_channel=NetworkChuck
     if (url.urlField.indexOf("youtube.com") > -1) {
@@ -73,16 +73,19 @@ const URLBox = () => {
     let endpointUrl;
     if (determineYouTubeOrTwitter(url.urlField) === "YouTube") {
       // endpointUrl = "http://localhost:8000/api/website/youtube/";
-      endpointUrl = "http://localhost:8000/api/website/youtube/" + youTubeId + "/";
+      endpointUrl =
+        "http://localhost:8000/api/website/youtube/" + youTubeId + "/";
     } else if (determineYouTubeOrTwitter(url.urlField) === "Twitter") {
-      endpointUrl = "http://localhost:8000/api/website/twitter/" + twitterId + "/";
+      endpointUrl =
+        "http://localhost:8000/api/website/twitter/" + twitterId + "/";
     } else {
       console.log("not a valid url");
     }
 
-    debugger;
     fetch(endpointUrl)
-      .then((res) => res.json())
+      .then((res) => {
+        return res.json();
+      })
       .then((data) => {
         console.log(data);
         setApiData(data);
@@ -100,9 +103,9 @@ const URLBox = () => {
   };
 
   return (
-    <>
+    <div className="url-box-wrapper" style={{padding: '0 20rem'}}>
       <div className="urlBox">
-        <form onSubmit={handleUrlSubmission}>
+        <form className="sentiment-form" onSubmit={handleUrlSubmission}>
           <input
             onChange={handleUrlChange}
             type="text"
@@ -110,19 +113,37 @@ const URLBox = () => {
             id="urlField"
             name="urlField"
             value={url.urlField}
+            className="input-analytics-input"
           />
-          <button type="submit">Go</button>
+          <button className="fetch-analytics-button" type="submit">
+            Fetch Analytics
+          </button>
         </form>
       </div>
-      <div style={{ textAlign: "center" }}>
-        {graphDataLoaded && (
-          <LineChart
+      <div className="sentiment-results">
+      {graphDataLoaded && (
+          <DoughnutChart
             apiData={apiData}
             website={determineYouTubeOrTwitter(url.urlField)}
           />
         )}
+
+        {graphDataLoaded && (
+          <BarChart
+            apiData={apiData}
+            website={determineYouTubeOrTwitter(url.urlField)}
+          />
+        )}
+        
+          {graphDataLoaded && (
+            <LineChart
+              apiData={apiData}
+              website={determineYouTubeOrTwitter(url.urlField)}
+            />
+          )}
+        
       </div>
-    </>
+    </div>
   );
 };
 

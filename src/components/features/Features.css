@@ -1,5 +1,7 @@
 .moodninja__features {
     display: flex;
+    margin: auto;
+    max-width: 1700px;
   }
 
 .mmodninja__features.section__padding {
