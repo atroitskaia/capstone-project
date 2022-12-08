@@ -56,52 +56,61 @@ const DoughnutChart = (props) => {
   };
 
   return (
-    <div className="doughnut-container" style={{maxWidth: '600px', margin: 'auto'}}>
+    <div className="doughnut-container" style={{maxWidth: '400px', margin: 'auto'}}>
       <h1 style={{ marginTop: "12px" }}>{props.website} Doughnut Chart</h1>
       <Chart
         type="doughnut"
         options={{
-          scales: {
-            x: {
-              type: "time",
-            },
-          },
+            cutoutWidth: "0%",
+            responsive: true,
+            
+        //   scales: {
+        //     x: {
+        //       type: "time",
+        //     }
+        //   }
         }}
-        data={{
+        const  data={{
+        // labels: ["Positive", "Neutral", "Negative"],
           datasets: [
             {
+            //   data: averageSplitSentiment(props.apiData),
+            //   options: {
+            //   maintainAspectRatio: false,
+            //   },
+            // }
+        
+        //  labels: ["Positive", "Neutral", "Negative"]
+        //     ,
+            // {
+              label: "Positive",
               data: averageSplitSentiment(props.apiData),
-              options: {
-                maintainAspectRatio: false,
-              }
-            },
-          ],
-          labels: ["Positive", "Neutral", "Negative"],
-          //   {
-          //     label: "Positive",
-          //     data: normalizeDataForGraphs(props.apiData["timestamps"], props.apiData[type][frequency]["positive"]),
-          //     backgroundColor: "#00FF00",
-          //     borderColor: "#00FF00",
+
+            //   data: normalizeDataForGraphs(props.apiData["timestamps"], props.apiData[type][frequency]["positive"]),
+              backgroundColor: "#00FF00",
+            //   borderColor: "#00FF00",
           //     pointRadius: 0,
           //     tension: 0.4
-          //   },
-          //   {
-          //     label: "Negative",
+            // },
+            // {
+              label: "Negative",
+              data: averageSplitSentiment(props.apiData),
           //     data: normalizeDataForGraphs(props.apiData["timestamps"], props.apiData[type][frequency]["negative"]),
-          //     backgroundColor: "#FF0000",
+              backgroundColor: "#FF0000",
           //     borderColor: "#FF0000",
           //     pointRadius: 0,
           //     tension: 0.4
-          //   },
-          //   {
-          //     label: "Neutral",
+            // },
+            // {
+              label: "Neutral",
+              data: averageSplitSentiment(props.apiData),
           //     data: normalizeDataForGraphs(props.apiData["timestamps"], props.apiData[type][frequency]["neutral"]),
-          //     backgroundColor: "#9F9F9F",
+              backgroundColor: "#9F9F9F",
           //     borderColor: "#9F9F9F",
           //     pointRadius: 0,
           //     tension: 0.4
-          //   }
-          // ]
+            }
+          ]
         }}
       />
     </div>

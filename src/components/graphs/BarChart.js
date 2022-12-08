@@ -39,6 +39,7 @@ const BarChart = (props) => {
         scales: {
           x: {
             type: "time"
+            
           }
         }
       }}

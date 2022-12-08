@@ -2,8 +2,8 @@ import React, { useState } from "react";
 // import { FetchSentiment } from "../utils/FetchSentiment";
 // import FetchRequestTest from "./fetch-request-test/FetchRequestTest";
 // import { UserData, sample_1 } from "../seed-data/seedData";
-import {BarChart} from "./graphs/BarChart";
-import DoughnutChart from "./graphs/Doughnut";
+// import {BarChart} from "./graphs/BarChart";
+// import DoughnutChart from "./graphs/Doughnut";
 // import { Line } from "./graphs/Line";
 
 // import BubbleChart from "./graphs/BubbleChart";
