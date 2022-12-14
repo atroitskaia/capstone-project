@@ -19,6 +19,7 @@ const URLBox = () => {
   const [url, setUrl] = useState({ urlField: "" });
   const [apiData, setApiData] = useState([]);
   const [graphDataLoaded, setGraphDataLoaded] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleUrlSubmission = (e) => {
     e.preventDefault();
@@ -82,16 +83,19 @@ const URLBox = () => {
       console.log("not a valid url");
     }
 
+    setLoading(true);
     fetch(endpointUrl)
-      .then((res) => {
+    .then((res) => {
         return res.json();
       })
       .then((data) => {
         console.log(data);
         setApiData(data);
         setGraphDataLoaded(true);
+        setLoading(false);
       })
       .catch((err) => {
+        setLoading(false);
         console.log(err);
       });
   };
@@ -121,21 +125,22 @@ const URLBox = () => {
         </form>
       </div>
       <div className="sentiment-results">
-      {graphDataLoaded && (
+        {loading && <div className="loading-spinner">Loading Sentiment...</div>}
+      {!loading && graphDataLoaded && (
           <DoughnutChart
             apiData={apiData}
             website={determineYouTubeOrTwitter(url.urlField)}
           />
         )}
 
-        {graphDataLoaded && (
+        {!loading && graphDataLoaded && (
           <BarChart
             apiData={apiData}
             website={determineYouTubeOrTwitter(url.urlField)}
           />
         )}
         
-          {graphDataLoaded && (
+          {!loading && graphDataLoaded && (
             <LineChart
               apiData={apiData}
               website={determineYouTubeOrTwitter(url.urlField)}

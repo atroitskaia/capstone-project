@@ -5,4 +5,7 @@
 .foot-links div {
     padding: 8px 12px;
     color: pink !important;
+    font-family: var(--font-family);
+    /* border-top: 2px solid pink; */
+    /* width: 100%; */
 }
