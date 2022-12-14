@@ -4,9 +4,9 @@ import './footer.css';
 
 const Footer = () => {
   return (
-    <div className="footerCss">
+    <footer className="footerCss">
       <Contact />
-    </div>
+    </footer>
   );
 };
 

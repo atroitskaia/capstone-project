@@ -1,148 +1,70 @@
-
+import {useNavigate} from "react-router-dom";
+import React, {useState} from 'react';
+import {Cookies} from "react-cookie";
 import './login.css';
 
-
-import React, { useState } from 'react';
-
-// function Login(props) {
-//   const [loading, setLoading] = useState(false);
-//   const username = useFormInput('');
-//   const password = useFormInput('');
-//   const [error, setError] = useState(null);
-
-//   // handle button click of login form
-//   const handleLogin = () => {
-//     setError(null);
-//     setLoading(true);
-//     // API something like http://example.com/user/login
-//     fetch(API, { name: username.value, pass: password.value }).then(response => {
-//       setLoading(false);
-//       // set the token and user from the session storage
-//       sessionStorage.setItem('token', response.data.token);
-//       sessionStorage.setItem('user', JSON.stringify(response.data.user));
-//       props.history.push('/dashboard');
-//     }).catch(error => {
-//       setLoading(false);
-//       if (error.response.status === 401) setError(error.response.data.message);
-//       else setError("Something went wrong. Please try again later.");
-//     });
-//   }
-
-//   return (
-//     <div>
-//       Login<br /><br />
-//       <div>
-//         Username<br />
-//         <input type="text" {...username} autoComplete="new-password" />
-//       </div>
-//       <div style={{ marginTop: 10 }}>
-//         Password<br />
-//         <input type="password" {...password} autoComplete="new-password" />
-//       </div>
-//       {error && <><small style={{ color: 'red' }}>{error}</small><br /></>}<br />
-//       <input type="button" value={loading ? 'Loading...' : 'Login'} onClick={handleLogin} disabled={loading} /><br />
-//     </div>
-//   );
-// }
-
-// const useFormInput = initialValue => {
-//   const [value, setValue] = useState(initialValue);
-
-//   const handleChange = e => {
-//     setValue(e.target.value);
-//   }
-//   return {
-//     value,
-//     onChange: handleChange
-//   }
-// }
-
-// export default Login;
-
-
-
+const cookies = new Cookies();
 
 const Login = () => {
+    const navigate = useNavigate();
+    const [error, setError] = useState(null);
+    const [username, setUsername] = useState(null);
+    const [password, setPassword] = useState(null);
+    const [isAuthenticated, setAuthenticated] = useState(false);
 
-  // React States
-  const [errorMessages, setErrorMessages] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
+    const handleInputChange = (e) => {
+        const {id, value} = e.target;
 
-  // User Login info
-  const database = [
-    {
-      username: "user1",
-      password: "pass1"
-    },
-    {
-      username: "user2",
-      password: "pass2"
-    }
-  ];
+        if (id === "username") setUsername(value);
+        if (id === "password") setPassword(value);
+    };
 
-  const errors = {
-    uname: "invalid username",
-    pass: "invalid password"
-  };
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
-  const handleSubmit = (event) => {
-    //Prevent page reload
-    event.preventDefault();
+        if (isAuthenticated) {
+            setError("You're already logged in. Log out to log in to another account.")
+            return;
+        }
 
-    var { uname, pass } = document.forms[0];
+        fetch("/account/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": cookies.get("csrftoken"),
+            },
+            credentials: "same-origin",
+            body: JSON.stringify({"username": username, "password": password}),
+        })
+            .then(response => {
+                response.text().then(text => {
+                    if (response.status === 400) {
+                        setError(text);
+                        return;
+                    }
 
-    // Find user login info
-    const userData = database.find((user) => user.username === uname.value);
+                    setAuthenticated(true);
+                    setError(null);
+                    navigate("/");
+                })
+            })
+    };
 
-    // Compare user info
-    if (userData) {
-      if (userData.password !== pass.value) {
-        // Invalid password
-        setErrorMessages({ name: "pass", message: errors.pass });
-      } else {
-        setIsSubmitted(true);
-      }
-    } else {
-      // Username not found
-      setErrorMessages({ name: "uname", message: errors.uname });
-    }
-  };
+    const handleError = () => {
+        if (error == null) return;
+        return <div className="login-error">{error}</div>;
+    };
 
-  // Generate JSX code for error message
-  const renderErrorMessage = (name) =>
-    name === errorMessages.name && (
-      <div className="error">{errorMessages.message}</div>
-    );
-
-  // JSX code for login form
-  const renderForm = (
-    <div className="form">
-      <form onSubmit={handleSubmit}>
-        <div className="input-container">
-          <label>Username </label>
-          <input type="text" name="uname" required />
-          {renderErrorMessage("uname")}
-        </div>
-        <div className="input-container">
-          <label>Password </label>
-          <input type="password" name="pass" required />
-          {renderErrorMessage("pass")}
-        </div>
-        <div className="button-container">
-          <input type="submit" />
-        </div>
-      </form>
-    </div>
-  );
-
-  return (
-    <div className="form">
-      <div className="login-form">
-        <div className="title"></div>
-        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
-      </div>
-    </div>
-  );
+    return <div className="register-form">
+        <form onChange={handleInputChange} onSubmit={handleSubmit}>
+            <label htmlFor="username">Username</label>
+            <input className="login-input" id="username" name="username" required/>
+            <label htmlFor="password">Password</label>
+            <input className="login-input" id="password" name="password" required/>
+            {handleError()}
+            <input className="login-submit" type="submit"/>
+        </form>
+    </div>;
 }
 
 export default Login;

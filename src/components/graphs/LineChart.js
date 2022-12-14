@@ -6,6 +6,7 @@ import {
   Chart as ChartJS,
   TimeScale,
   LinearScale,
+  LineController,
   PointElement,
   LineElement,
   Title,
@@ -17,6 +18,7 @@ import { Chart } from "react-chartjs-2";
 ChartJS.register(
   TimeScale,
   LinearScale,
+  LineController,
   PointElement,
   LineElement,
   Title,

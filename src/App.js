@@ -3,7 +3,8 @@ import { BrowserRouter, Switch, Routes, Route,  NavLink} from "react-router-dom"
 import MainLanding from './components/MainLanding';
 import Header from './components/header/Header';
 import Register from './components/register/Register';
-import Login from './components//login/Login';
+import Login from './components/login/Login';
+import Logout from './components/logout/Logout';
 // import Dashboard from './components/dashboard/Dashboard';
 
 import Footer from './components/footer/Footer';
@@ -20,6 +21,7 @@ const App = () => (
             <Route path='/register' element={<Register/>} />
             <Route path='/login' element={<Login/>} />
             {/* <Route path='/dashboard' element={<Dashboard/>} /> */}
+            <Route path='/logout' element={<Logout/>}></Route>
         </Routes>
             <div></div>
         {/* <MainLanding /> */}
