@@ -1,9 +1,11 @@
 import React from 'react';
-import { Route, Routes} from "react-router-dom"
+import { BrowserRouter, Switch, Routes, Route,  NavLink} from "react-router-dom"
 import MainLanding from './components/MainLanding';
 import Header from './components/header/Header';
 import Register from './components/register/Register';
 import Login from './components//login/Login';
+// import Dashboard from './components/dashboard/Dashboard';
+
 import Footer from './components/footer/Footer';
 
 import './App.css';
@@ -17,6 +19,7 @@ const App = () => (
         <Route path='/' element={<MainLanding/>} />
             <Route path='/register' element={<Register/>} />
             <Route path='/login' element={<Login/>} />
+            {/* <Route path='/dashboard' element={<Dashboard/>} /> */}
         </Routes>
             <div></div>
         {/* <MainLanding /> */}
