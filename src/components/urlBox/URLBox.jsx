@@ -109,20 +109,20 @@ const URLBox = () => {
   };
 
   return (
-    <div className="url-box-wrapper" style={{padding: '0 20rem'}}>
+    <div className="url-box-wrapper section__padding">
       <div className="urlBox">
         <form className="sentiment-form" onSubmit={handleUrlSubmission}>
           <input
             onChange={handleUrlChange}
             type="text"
-            placeholder="Enter URL"
+            placeholder="Enter in a link to a social media post"
             id="urlField"
             name="urlField"
             value={url.urlField}
             className="input-analytics-input"
           />
           <button className="fetch-analytics-button" type="submit">
-            Fetch Analytics
+            Analyze
           </button>
         </form>
       </div>

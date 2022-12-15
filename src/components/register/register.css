@@ -2,47 +2,39 @@
     background: var(--color-bg);
 } */
 
-.form {
+.register-form {
     font-family: sans-serif;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: white;
     border-radius: 5px;
-    width: 550px; 
+    width: 550px;
     margin: 20px auto;
     height: 50vh;
     background-color: #c9d2f5;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-    
 }
 
-.form__body {
-    text-align: left;
-    /* padding: 20px, 10px; */
-    padding: 2rem;
-    background-color: white;
-    
-   
+.register-error {
+    color: red;
+    font-size: 12px;
+    padding-bottom: 5px;
+}
 
-}
-.form__label{
-    width: 40%;
-    
-}
-.form__input{
+.register-input {
     display: flex;
     flex-direction: column;
     gap: 8px;
     margin: 10px;
-  
-
-}
-.footer {
-    text-align: center;
-    background: #6cf0c2;
-
 }
 
+.register-submit {
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    background: #01d28e;
+    border: 0;
+    color: #fff;
+    padding: 10px 20px;
+}
