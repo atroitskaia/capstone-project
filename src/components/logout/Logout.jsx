@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import {useNavigate} from "react-router-dom";
+import React, {useState} from "react";
 
-const Logout = () => {
-    const [isAuthenticated, setAuthenticated] = useState(false);
+const Logout = ({isAuthenticated, setAuthenticated}) => {
+    const navigate = useNavigate();
 
     fetch("/account/logout")
         .then(response => {
             setAuthenticated(false);
+            navigate("/");
         })
 }
 

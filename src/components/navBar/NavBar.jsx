@@ -6,19 +6,17 @@ const linkStyle = {
     padding: '0 18px',
 }
 
-const NavBar = () => {
-    const [isAuthenticated, setAuthenticated] = useState(false);
-
+const NavBar = ({isAuthenticated, setAuthenticated}) => {
     const links = () => {
         if (isAuthenticated) {
             return <div className="moodninja__navBar-links">
-                <Link to='/register' style={linkStyle} activeClassName="moodninja__navBar-link-items">Register </Link>
-                <Link to='/login' activeClassName="moodninja__navBar-link-items">Login</Link>
+                <Link to='/dashboard' style={linkStyle} activeClassName="moodninja__navBar-link-items">Dashboard </Link>
+                <Link to='/logout' activeClassName="moodninja__navBar-link-items">Logout</Link>
             </div>;
         } else {
             return <div className="moodninja__navBar-links">
-                <Link to='/dashboard' style={linkStyle} activeClassName="moodninja__navBar-link-items">Dashboard </Link>
-                <Link to='/logout' activeClassName="moodninja__navBar-link-items">Logout</Link>
+                <Link to='/register' style={linkStyle} activeClassName="moodninja__navBar-link-items">Register </Link>
+                <Link to='/login' activeClassName="moodninja__navBar-link-items">Login</Link>
             </div>;
         }
     };

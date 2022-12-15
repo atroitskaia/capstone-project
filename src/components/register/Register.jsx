@@ -1,16 +1,15 @@
 import {useNavigate} from "react-router-dom";
-import {Cookies} from "react-cookie";
 import React, {useState} from 'react';
+import {Cookies} from "react-cookie";
 import './register.css';
 
 const cookies = new Cookies();
 
-const Register = () => {
+const Register = ({isAuthenticated, setAuthenticated}) => {
     const navigate = useNavigate();
     const [error, setError] = useState(null);
     const [username, setUsername] = useState(null);
     const [password, setPassword] = useState(null);
-    const [isAuthenticated, setAuthenticated] = useState(false);
     const [confirmPassword, setConfirmPassword] = useState(null);
 
     const handleInputChange = (e) => {

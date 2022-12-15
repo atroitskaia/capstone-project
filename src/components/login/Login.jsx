@@ -5,12 +5,11 @@ import './login.css';
 
 const cookies = new Cookies();
 
-const Login = () => {
+const Login = ({isAuthenticated, setAuthenticated}) => {
     const navigate = useNavigate();
     const [error, setError] = useState(null);
     const [username, setUsername] = useState(null);
     const [password, setPassword] = useState(null);
-    const [isAuthenticated, setAuthenticated] = useState(false);
 
     const handleInputChange = (e) => {
         const {id, value} = e.target;

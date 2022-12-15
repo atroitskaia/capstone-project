@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter, Switch, Routes, Route,  NavLink} from "react-router-dom"
+import React, {useState} from 'react';
+import {BrowserRouter, Switch, Routes, Route, NavLink} from "react-router-dom"
 import MainLanding from './components/MainLanding';
 import Header from './components/header/Header';
 import Register from './components/register/Register';
@@ -12,21 +12,24 @@ import Footer from './components/footer/Footer';
 import './App.css';
 // import AnalyticsLink from './components/analyticsLink/AnalyticsLink';
 
-const App = () => (
-    <div className="App">
-        <Header />
+const App = () => {
+    const [isAuthenticated, setAuthenticated] = useState(false);
 
+    console.log(isAuthenticated);
+
+    return <div className="App">
+        <Header isAuthenticated={isAuthenticated} setAuthenticated={setAuthenticated}/>
         <Routes>
-        <Route path='/' element={<MainLanding/>} />
-            <Route path='/register' element={<Register/>} />
-            <Route path='/login' element={<Login/>} />
+            <Route path='/' element={<MainLanding/>}/>
+            <Route path='/register' element={<Register isAuthenticated={isAuthenticated} setAuthenticated={setAuthenticated}/>}/>
+            <Route path='/login' element={<Login isAuthenticated={isAuthenticated} setAuthenticated={setAuthenticated}/>}/>
             {/* <Route path='/dashboard' element={<Dashboard/>} /> */}
-            <Route path='/logout' element={<Logout/>}></Route>
+            <Route path='/logout' element={<Logout isAuthenticated={isAuthenticated} setAuthenticated={setAuthenticated}/>}/>
         </Routes>
-            <div></div>
+        <div></div>
         {/* <MainLanding /> */}
-        <Footer />
-    </div>
-);
+        <Footer/>
+    </div>;
+}
 
 export default App;
