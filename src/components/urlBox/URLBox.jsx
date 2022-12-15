@@ -93,6 +93,8 @@ const URLBox = () => {
         setApiData(data);
         setGraphDataLoaded(true);
         setLoading(false);
+        const urlBox = document.querySelector(".urlBox");
+        urlBox.scrollIntoView(true)
       })
       .catch((err) => {
         setLoading(false);
