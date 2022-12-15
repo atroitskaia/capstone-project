@@ -1,5 +1,4 @@
 import {useNavigate} from "react-router-dom";
-import React, {useState} from "react";
 
 const Logout = ({isAuthenticated, setAuthenticated}) => {
     const navigate = useNavigate();

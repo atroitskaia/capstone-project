@@ -57,9 +57,9 @@ const Login = ({isAuthenticated, setAuthenticated}) => {
     return <div className="register-form">
         <form onChange={handleInputChange} onSubmit={handleSubmit}>
             <label htmlFor="username">Username</label>
-            <input className="login-input" id="username" name="username" required/>
+            <input className="login-input" id="username" name="username" type="text" required/>
             <label htmlFor="password">Password</label>
-            <input className="login-input" id="password" name="password" required/>
+            <input className="login-input" id="password" name="password" type="password" required/>
             {handleError()}
             <input className="login-submit" type="submit"/>
         </form>

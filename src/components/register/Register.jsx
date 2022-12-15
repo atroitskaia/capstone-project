@@ -44,7 +44,7 @@ const Register = ({isAuthenticated, setAuthenticated}) => {
         })
             .then(response => {
                 response.text().then(text => {
-                    if (response.status === 400) {
+                    if (!response.ok) {
                         setError(text);
                         return;
                     }
@@ -53,22 +53,23 @@ const Register = ({isAuthenticated, setAuthenticated}) => {
                     setError(null);
                     navigate("/");
                 })
-            })
+            });
     };
 
     const handleError = () => {
         if (error == null) return;
+        console.log("test 3");
         return <div className="register-error">{error}</div>;
     };
 
     return <div className="register-form">
         <form onChange={handleInputChange} onSubmit={handleSubmit}>
             <label htmlFor="username">Username</label>
-            <input className="register-input" id="username" name="username" required/>
+            <input className="register-input" id="username" name="username" type="text" required/>
             <label htmlFor="password">Password</label>
-            <input className="register-input" id="password" name="password" required/>
+            <input className="register-input" id="password" name="password" type="password" required/>
             <label htmlFor="confirm-password">Confirm Password</label>
-            <input className="register-input" id="confirm-password" name="confirm-password" required/>
+            <input className="register-input" id="confirm-password" name="confirm-password" type="password" required/>
             {handleError()}
             <input className="register-submit" type="submit"/>
         </form>

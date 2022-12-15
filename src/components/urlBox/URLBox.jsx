@@ -115,7 +115,7 @@ const URLBox = () => {
           <input
             onChange={handleUrlChange}
             type="text"
-            placeholder="Enter link to a social media post"
+            placeholder="Enter a link to a social media post"
             id="urlField"
             name="urlField"
             value={url.urlField}

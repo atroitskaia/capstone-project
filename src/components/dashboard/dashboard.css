@@ -1,36 +1,44 @@
-.urlBox {
+.dashboard {
+    justify-content: space-between;
+    padding: 2rem 20rem;
+    font-family: 'outfit', sans-serif;
+    font-size: 20px;
+    margin: auto;
+    max-width: 1700px;
+    color: white;
+}
+
+.dashboard-add {
     background: #9193DE;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    /* gap: 22px; */
     border-radius: 10px;
     margin: 0 auto;
     padding: 14px 16px;
-    /* border: 2px solid #fff; */
     width: 1200px;
 }
 
-.sentiment-form {
+.dashboard-form {
     display: flex;
     width: 100%;
 }
 
-.input-analytics-input {
+.dashboard-form-input {
     border-width: 0 !important;
     /* width: 57%; */
     height: 40px !important;
     flex: 1;
     background-color: transparent;
     font-size: 18px;
-     outline: none;
+    outline: none;
     margin-right: 24px;
     border-radius: 5px;
     padding: 2px 8px;
-    color: white !important;
+    color: white;
 }
 
-.fetch-analytics-button {
+.dashboard-form-submit {
     font-size: 18px;
     border-radius: 10px;
     border-width: 0;
@@ -39,19 +47,14 @@
     color: white;
 }
 
-.sentiment-results {
-    text-align: center;
-    width: 68%;
-    margin: 26px auto 0;
-    font-family: roboto, sans-serif;
-    padding-bottom: 80px;
-    color: #bccaff;
+.dashboard-content {
+    display: flex;
+    padding-top: 25px;
 }
 
-.loading-spinner {
-    width: 100%;
-    height: 240px;
-    background: url(../../assets/spinning-gear.gif)
-      center center no-repeat;
-    background-size: 240px;
-  }
+.dashboard-error {
+    color: red;
+    padding-top: 25px;
+    padding-left: 4px;
+    padding-bottom: 0;
+}
