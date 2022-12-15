@@ -56,7 +56,7 @@ const DoughnutChart = (props) => {
 
     total = positive + neutral + negative;
 
-    return [positive / total, neutral / total, negative / total];
+    return [(positive / total)*100, (neutral / total)*100, (negative / total)*100];
   };
 
   const [positive, neutral, negative] = averageSplitSentiment(props.apiData);
@@ -66,19 +66,20 @@ const DoughnutChart = (props) => {
       {
         data: [positive, neutral, negative],
         backgroundColor: [
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(255, 99, 132, 0.2)",
+          // "rgba(54, 162, 235, 0.5)",
+          "rgba(0, 255, 0, 0.5)",
+          "rgba(255, 206, 86, 0.5)",
+          "rgba(255, 99, 132, 0.5)",
         ],
         borderColor: [
-          "rgba(54, 162, 235, 1)",
+          "rgba(0, 255, 0, 1)",
           "rgba(255, 206, 86, 1)",
           "rgba(255, 99, 132, 1)",
         ],
         borderWidth: 3,
       },
     ],
-  };
+  };  
 
   return (
     <div

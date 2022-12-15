@@ -32,7 +32,7 @@ const BarChart = (props) => {
 
   return (
     <>
-    <h1>{props.website} Bar Chart</h1>
+    <h1>{props.website}</h1>
     <Chart
       type="bar"
       options={{
@@ -48,19 +48,23 @@ const BarChart = (props) => {
           {
             label: "Positive",
             data: normalizeDataForGraphs(props.apiData["timestamps"], props.apiData[type][frequency]["positive"]),
-            backgroundColor: "#00FF00",
-            borderColor: "#00FF00",
+            // backgroundColor: "#00FF00",
+            backgroundColor: 'rgba(0, 255, 0, 0.5)',
+            borderColor: 'rgba(0, 255, 0, 1)',
             barPercentage: 33,
             pointRadius: 0,
             tension: 0.4,
-            borderWidth: 1,
+            borderWidth: 2,
             barThickness: 5
           },
           {
             label: "Negative",
             data: normalizeDataForGraphs(props.apiData["timestamps"], props.apiData[type][frequency]["negative"]),
-            backgroundColor: "#FF0000",
-            borderColor: "#FF0000",
+           // backgroundColor: "#FF0000",
+           backgroundColor: "rgba(255, 99, 132, 0.5)", 
+          //  borderColor: "#FF0000",
+          borderColor: "rgba(255, 99, 132, 1)",
+          borderWidth: 2,
             barPercentage: 33,
             pointRadius: 0,
             tension: 0.4,
@@ -69,9 +73,11 @@ const BarChart = (props) => {
           {
             label: "Neutral",
             data: normalizeDataForGraphs(props.apiData["timestamps"], props.apiData[type][frequency]["neutral"]),
-            backgroundColor: "#9F9F9F",
-            borderColor: "#9F9F9F",
+            // backgroundColor: "#9F9F9F",
+            backgroundColor: "rgba(255, 206, 86, 0.5)", 
+            borderColor:  "rgba(255, 206, 86, 1)",
             barPercentage: 33,
+            borderWidth: 2,
             pointRadius: 0,
             tension: 0.4,
             barThickness: 5
