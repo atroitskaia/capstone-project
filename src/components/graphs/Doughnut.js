@@ -85,7 +85,7 @@ const DoughnutChart = (props) => {
       className="doughnut-container"
       style={{ maxWidth: "600px", margin: "auto", marginBottom: "20px"  }}
     >
-      <h1 style={{ marginTop: "12px"}}>{props.website} Doughnut Chart</h1>
+      <h1 style={{ marginTop: "12px"}}>{props.website} Overall Sentiment</h1>
       <Chart type="doughnut" data={data} />
     </div>
   );

@@ -16,6 +16,10 @@
     width: 100%;
 }
 
+.input-analytics-input::placeholder {
+    color: #000;
+}
+
 .input-analytics-input {
     border-width: 0 !important;
     /* width: 57%; */
@@ -24,7 +28,11 @@
     background-color: transparent;
     font-size: 18px;
     padding: 10px;
-    outline: none;
+    /* outline: none; */
+    margin-right: 24px;
+    border-radius: 5px;
+    padding: 2px 8px;
+    color: purple !important;
 }
 
 .fetch-analytics-button {
@@ -42,6 +50,7 @@
     margin: 26px auto 0;
     font-family: roboto, sans-serif;
     padding-bottom: 80px;
+    color: #bccaff;
 }
 
 .loading-spinner {
