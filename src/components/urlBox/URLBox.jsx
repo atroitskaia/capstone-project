@@ -38,8 +38,6 @@ const URLBox = () => {
 
         // 1596681448127447042
 
-        // ****************************************************************
-        // previously written was url.urlField("twitter.com") > -1
         if (urlField.indexOf("twitter.com") > -1) {
             // Grab twitter id AND everything that follows it at the end of the url
             const twitterIdAndSuffix = urlField.split("/status/")[1];
