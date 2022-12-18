@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from "react";
+import DoughnutChart from "../graphs/Doughnut";
 import LineChart from "../graphs/LineChart";
 import BarChart from "../graphs/BarChart";
-import DoughnutChart from "../graphs/Doughnut";
-
+import {Cookies} from "react-cookie";
 import "./urlBox.css";
+
+const cookies = new Cookies();
 
 const determineYouTubeOrTwitter = (url) => {
     if (url.indexOf("youtube") > -1 || url.indexOf("youtu.be") > -1) {
@@ -76,18 +78,23 @@ const URLBox = () => {
         // if(urlField.indexOf())
         let endpointUrl;
         if (determineYouTubeOrTwitter(url.urlField) === "YouTube") {
-            // endpointUrl = "http://localhost:8000/api/website/youtube/";
             endpointUrl =
-                "http://localhost:8000/api/website/youtube/" + youTubeId + "/";
+                "/api/website/youtube/" + youTubeId + "/";
         } else if (determineYouTubeOrTwitter(url.urlField) === "Twitter") {
             endpointUrl =
-                "http://localhost:8000/api/website/twitter/" + twitterId + "/";
+                "/api/website/twitter/" + twitterId + "/";
         } else {
             console.log("not a valid url");
         }
 
         setLoading(true);
-        fetch(endpointUrl)
+        fetch(endpointUrl, {
+            method: "GET",
+            headers: {
+                "X-CSRFToken": cookies.get("csrftoken"),
+            },
+            credentials: "same-origin"
+        })
             .then((res) => {
                 return res.json();
             })

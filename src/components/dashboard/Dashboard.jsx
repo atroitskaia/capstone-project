@@ -48,6 +48,18 @@ export default function Dashboard({isAuthenticated, setAuthenticated}) {
             });
     };
 
+    const createFeed = () => {
+        // fetch("/account/feed", {
+        //     method: "GET",
+        //     headers: {
+        //         "X-CSRFToken": cookies.get("csrftoken"),
+        //     },
+        //     credentials: "same-origin",
+        // });
+
+        return <div></div>;
+    };
+
     return <div className="dashboard">
         <div className="dashboard-add">
             <form className="dashboard-form" onChange={handleChange} onSubmit={handleSubmit}>
@@ -58,7 +70,11 @@ export default function Dashboard({isAuthenticated, setAuthenticated}) {
         </div>
         {handleError()}
         <div className="dashboard-content">
-            <h2 className="dashboard-text">Followed Users</h2>
+            <div>
+                <h2 className="dashboard-text">Feed</h2>
+            </div>
+            <br/>
+            {createFeed()}
         </div>
     </div>;
 }
